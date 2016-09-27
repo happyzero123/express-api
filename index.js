@@ -1,14 +1,22 @@
 var express = require('express')
 var app = express()
 
-app.get('/', function (req, res) {
+app.get('/:name', function (req, res) {
+  var useName = req.params.name;
   var page ="<html>"+
             "<body>"+
-                "<h1>i'm index.html</h1>"+
+                "<h1>"+
+                useName + "的宠物" +
+                "</h1>"+
             "</body>"+
             "</html>"
   res.send(page)
-  console.log('hello express');
+  console.log(req.params);
+})
+
+app.post('/:name', function (req, res) {
+
+  res.send("a POST request received " + req.params.name)
 })
 app.get('/about', function (req, res) {
   var page ="<html>"+
