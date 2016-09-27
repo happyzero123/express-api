@@ -2,10 +2,15 @@ var express = require('express')
 var app = express()
 
 app.get('/', function (req, res) {
-  res.send('Hello Express')
+  var page ="<html>"+
+            "<body>"+
+                "<h1>i'm index.html</h1>"+
+            "</body>"+
+            "</html>"
+  res.send(page)
   console.log('hello express');
 })
-app.get('/ppp', function (req, res) {
+app.get('/about.html', function (req, res) {
   res.send('Hello ppp')
   console.log('pppp');
 })
