@@ -10,8 +10,13 @@ app.get('/', function (req, res) {
   res.send(page)
   console.log('hello express');
 })
-app.get('/about.html', function (req, res) {
-  res.send('Hello ppp')
+app.get('/about', function (req, res) {
+  var page ="<html>"+
+            "<body>"+
+                "<h1>i'm about.html</h1>"+
+            "</body>"+
+            "</html>"
+  res.send(page)
   console.log('pppp');
 })
 app.listen(3000,function(){
